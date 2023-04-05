@@ -13,10 +13,12 @@ function solution(n, k) {
         break;
     }
   }
-  
+
   answer = gocchiPrice + bevPrice;
   return answer;
 }
 
 console.log(solution(10, 3)); // 124,000
 console.log(solution(64, 6)); // 768,000
+
+//오류,,
