@@ -1,1 +1,1 @@
-# Programmers Coding Test -Practicing
+# Coding Test -Practicing
