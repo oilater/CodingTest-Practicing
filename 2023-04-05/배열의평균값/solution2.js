@@ -1,13 +1,15 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/120817?language=javascript
+function sum(arr) {
+  let result = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    result += arr[i];
+  }
+  return result;
+}
 
 function solution(numbers) {
-  let sum = 0;
-
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-  }
-
-  return sum / numbers.length;
+  return sum(numbers) / numbers.length;
 }
 
 console.log(solution([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])); // 5.5
