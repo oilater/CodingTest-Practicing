@@ -3,11 +3,8 @@
 function solution(s) {
   var answer = "";
 
-  
   return answer;
 }
-
-
 
 console.log(solution("abcabcadc")); // "d"
 console.log(solution("abdc")); // "abcd"
