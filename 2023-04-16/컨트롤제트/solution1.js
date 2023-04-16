@@ -1,7 +1,16 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/120853?language=javascript
 
 function solution(s) {
-  const answer = 0;
+  let answer = 0;
+  const arr = s.split(" ").map(Number);
+
+  for (let i = 0; i < arr.length; i++) {
+    if (isNaN(arr[i])) {
+      arr[i] = -arr[i - 1];
+    }
+    answer += arr[i];
+  }
+
   return answer;
 }
 
