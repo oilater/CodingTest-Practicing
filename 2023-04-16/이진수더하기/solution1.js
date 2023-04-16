@@ -7,8 +7,9 @@ function solution(bin1, bin2) {
   let num = 0;
   let maxNum = 0;
   let count = 0;
-  let arr = [];
+  const arr = [];
 
+  // 10진수로 변환
   for (let i = 0; i < bin1.length; i++) {
     const j = bin1.length - i - 1;
     n1 += bin1[j] * 2 ** i;
@@ -21,12 +22,14 @@ function solution(bin1, bin2) {
 
   num = n1 + n2;
 
+  // 2진수 변환 준비
   for (let i = 0; i < num; i++) {
     if (2 ** i <= num) {
       maxNum = i;
     }
   }
 
+  // 2진수로 변환
   for (let i = 0; i <= maxNum; i++) {
     const j = maxNum - i;
 
