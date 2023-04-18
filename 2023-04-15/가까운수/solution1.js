@@ -38,6 +38,4 @@ console.log(solution([3, 10, 50, 28], 20)); // 28
 console.log(solution([10, 11, 12], 13)); // 12
 console.log(solution([10, 12, 5], 11)); // 10
 console.log(solution([12, 11, 9, 11, 10, 19, 11], 10)); // 10
-console.log(solution([2, 3, 97, 81, 80, 99], 1)); // 10
-
-//오답
+console.log(solution([2, 3, 97, 81, 80, 99], 1)); // 2
