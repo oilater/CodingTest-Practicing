@@ -1,9 +1,16 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/120868?language=javascript
 
 function solution(sides) {
-  const answer = 0;
+  sides.sort((a, b) => a - b);
+  let count = 0;
+  const min = sides[1] - sides[0] + 1;
+  const sum = sides[0] + sides[1];
 
-  return answer;
+  for (let i = min; i < sum; i++) {
+    count++;
+  }
+
+  return count;
 }
 
 console.log(solution([1, 2])); // 1
