@@ -17,7 +17,7 @@ function solution(score) {
 
   for (let i = 0; i < answer.length; i++) {
     for (let j = 0; j < answer.length; j++) {
-      if (answer[i] < answer[j]) {
+      if (answer[i] <= answer[j]) {
         ranks[i] += 1;
       }
     }
