@@ -2,6 +2,32 @@
 
 function solution(quiz) {
   let answer = [];
+  let result = 0;
+  // quiz의 각 index 배열로 만들기
+  for (let i = 0; i < quiz.length; i++) {
+    quiz[i] = quiz[i].split(" ");
+  }
+
+  for (let i = 0; i < quiz.length; i++) {
+    for (let j = 0; j < quiz[i].length; j++) {
+      if (quiz[i][j] === "+") {
+        result = Number(quiz[i][j - 1]) + Number(quiz[i][j + 1]);
+
+        if (result === Number(quiz[i][quiz[i].length - 1])) {
+          answer.push("O");
+        } else {
+          answer.push("X");
+        }
+      } else if (quiz[i][j] === "-") {
+        result = Number(quiz[i][j - 1]) - Number(quiz[i][j + 1]);
+        if (result === Number(quiz[i][quiz[i].length - 1])) {
+          answer.push("O");
+        } else {
+          answer.push("X");
+        }
+      }
+    }
+  }
 
   return answer;
 }
