@@ -1,77 +1,131 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/120866?language=javascript
 
 function solution(board) {
-    // 지뢰를 찾는다
-    // 지뢰 주변을 위험지대로 바꿔야 한다
-    // 안전지대의 갯수를 센다
+  // 지뢰를 찾는다
+  // 지뢰 주변을 위험지대로 바꿔야 한다
+  // 안전지대의 갯수를 센다
 
-    const mine = [];
+  const mine = [];
 
-    for (let i = 0; i < board.length; i++) {
-        for (let j = 0; j < board[i].length; j++) {
-            if (board[i][j] === 1) {
-                mine.push([i, j]);
-            }
-        }
+  //특수한 상황 처리
+  if (board.length === 1) {
+    if (board[0][0] === 1) return 0;
+    else return 1;
+  }
+
+  for (let i = 0; i < board.length; i++) {
+    for (let j = 0; j < board[i].length; j++) {
+      if (board[i][j] === 1) {
+        mine.push([i, j]);
+      }
     }
-    console.log(mine);
+  }
+  console.log(mine);
 
-    for (let i = 0; i < mine.length; i++) {
-        // let x = mine[i][0];
-        // let y = mine[i][1];
-        let [x, y] = mine[i];
-        // console.log(x, y);
+  for (let i = 0; i < mine.length; i++) {
+    let [x, y] = mine[i];
 
-        if (x - 1 < 0) {
-            continue;
-        }
-
-        if (x + 1 === board.length) {
-            continue;
-        }
-
-        if (y - 1 < 0) {
-            continue;
-        }
-
-        if (y + 1 === board.length) {
-            continue;
-        }
-
-        board[x-1][y-1] = 2;
-        board[x][y-1] = 2;
-        board[x+1][y-1] = 2;
-
-        board[x-1][y+1] = 2;
-        board[x][y+1] = 2;
-        board[x+1][y+1] = 2;
-
-        board[x-1][y] = 2;
-        board[x+1][y] = 2;
+    if (x === 0 && y - 1 < 0) {
+      board[x][y + 1] = 2;
+      board[x + 1][y] = 2;
+      board[x + 1][y + 1] = 2;
+      continue;
     }
 
-    let result = 0;
-    
-    for (let i = 0; i < board.length; i++) {
-        for (let j = 0; j < board[i].length; j++) {
-            if (board[i][j] === 0) {
-                result += 1;
-            }
-        }
+    if (x === 0 && y === board.length - 1) {
+      board[x][y - 1] = 2;
+      board[x + 1][y - 1] = 2;
+      board[x + 1][y] = 2;
+      continue;
     }
 
-    return result;
+    if (x === 0 && y !== 0 && y !== board.length - 1) {
+      board[x][y - 1] = 2;
+      board[x][y + 1] = 2;
+      board[x + 1][y - 1] = 2;
+      board[x + 1][y] = 2;
+      board[x + 1][y + 1] = 2;
+      continue;
+    }
+
+    if (x === board.length - 1 && y - 1 < 0) {
+      board[x - 1][y] = 2;
+      board[x - 1][y + 1] = 2;
+      board[x][y + 1] = 2;
+      continue;
+    }
+
+    if (x === board.length - 1 && y === board.length - 1) {
+      board[x - 1][y - 1] = 2;
+      board[x - 1][y] = 2;
+      board[x][y - 1] = 2;
+      continue;
+    }
+
+    if (x === board.length - 1 && y !== 0 && y !== board.length - 1) {
+      board[x - 1][y - 1] = 2;
+      board[x - 1][y] = 2;
+      board[x - 1][y + 1] = 2;
+      board[x][y - 1] = 2;
+      board[x][y + 1] = 2;
+      continue;
+    }
+
+    if (y === 0 && x - 1 !== undefined && x !== board.length - 1) {
+      board[x - 1][y] = 2;
+      board[x - 1][y + 1] = 2;
+      board[x][y + 1] = 2;
+      board[x + 1][y] = 2;
+      board[x + 1][y + 1] = 2;
+      continue;
+    }
+
+    if (
+      y === board.length - 1 &&
+      x - 1 !== undefined &&
+      x !== board.length - 1
+    ) {
+      board[x - 1][y - 1] = 2;
+      board[x - 1][y] = 2;
+      board[x][y - 1] = 2;
+      board[x + 1][y - 1] = 2;
+      board[x + 1][y] = 2;
+      continue;
+    }
+
+    board[x - 1][y - 1] = 2;
+    board[x][y - 1] = 2;
+    board[x + 1][y - 1] = 2;
+
+    board[x - 1][y + 1] = 2;
+    board[x][y + 1] = 2;
+    board[x + 1][y + 1] = 2;
+
+    board[x - 1][y] = 2;
+    board[x + 1][y] = 2;
+  }
+
+  let result = 0;
+
+  for (let i = 0; i < board.length; i++) {
+    for (let j = 0; j < board[i].length; j++) {
+      if (board[i][j] === 0) {
+        result += 1;
+      }
+    }
+  }
+
+  return result;
 }
 
-
 console.log(
-    solution([
-        [0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0],
-        [0, 0, 1, 0, 0],
-        [0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0],
-    ])
+  solution([
+    [0, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+  ])
 ); // 16
 
 console.log(

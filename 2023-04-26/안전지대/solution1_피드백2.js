@@ -16,7 +16,7 @@ function solution(board) {
     }
     console.log(mine);
 
-
+ㄹ
     for (let i = 0; i < mine.length; i++) {
         let [x, y] = mine[i];
 
