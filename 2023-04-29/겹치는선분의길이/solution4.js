@@ -6,19 +6,37 @@ function solution(lines) {
   let arrA = [];
   let arr2 = [];
 
+  if (lines[0][0] === lines[1][1]) {
+    lines[0][0] += 1;
+  }
+
+  if (lines[0][0] === lines[2][1]) {
+    lines[0][0] += 1;
+  }
+
+  if (lines[0][1] === lines[1][0]) {
+    lines[1][0] += 1;
+  }
+  if (lines[0][1] === lines[2][0]) {
+    lines[2][0] += 1;
+  }
+  if (lines[1][0] === lines[2][1]) {
+    lines[1][0] += 1;
+  }
+
   for (let i = 0; i < lines.length; i++) {
     for (let j = lines[i][0]; j <= lines[i][1]; j++) {
       arr.push(j);
     }
   }
+
   console.log(arr);
-
-  for (let i = 0; i < arr.length - 1; i++) {
-    if (arr[i] === arr[i + 1]) {
-      arr.splice(i, 1, "");
-    }
-  }
-
+  // for (let i = 0; i < arr.length - 1; i++) {
+  //   if (arr[i] === arr[i + 1]) {
+  //     arr.splice(i, 1, "");
+  //   }
+  // }
+  console.log(arr);
   arr = arr.sort((a, b) => a - b);
 
   let count = 0;
@@ -99,8 +117,10 @@ function solution(lines) {
 // ); // 1
 console.log(
   solution([
-    [0, 4],
-    [2, 6],
-    [1, 2],
+    [2, 4],
+    [6, 10],
+    [4, 7],
   ])
-);
+); // 1
+
+// 정답!!!!!

@@ -2,7 +2,7 @@
 
 function solution(lines) {
   let numLine = Array(201).fill(0);
-  let numLine = Array(201).fill(0);
+
   // 각 라인을 반복하고 수직선에 위치를 표시
   for (let i = 0; i < lines.length; i++) {
     for (let j = lines[i][0]; j < lines[i][1]; j++) {
@@ -63,3 +63,5 @@ console.log(
     [1, 2],
   ])
 );
+
+//ChatGPT 한테 물어봄
