@@ -36,7 +36,7 @@ function solution(lines) {
   //     arr.splice(i, 1, "");
   //   }
   // }
-  console.log(arr);
+
   arr = arr.sort((a, b) => a - b);
 
   let count = 0;
