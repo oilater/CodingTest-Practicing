@@ -2,6 +2,17 @@
 
 function solution(n) {
   let answer = "";
+  const wm = "수박";
+
+  for (let i = 1; i < n + 1; i++) {
+    if (i % 2 !== 0) {
+      answer += wm[0];
+    }
+
+    if (i % 2 === 0) {
+      answer += wm[1];
+    }
+  }
 
   return answer;
 }
