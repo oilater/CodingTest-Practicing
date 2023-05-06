@@ -1,9 +1,18 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/176963?language=javascript
 
 function solution(name, yearning, photo) {
-  let answer = [];
+  const answer = [];
 
-  
+  for (let i = 0; i < photo.length; i++) {
+    let score = 0;
+    for (let j = 0; j < photo[i].length; j++) {
+      if (name.includes(photo[i][j])) {
+        score += yearning[name.indexOf(photo[i][j])];
+      }
+    }
+
+    answer.push(score);
+  }
 
   return answer;
 }
