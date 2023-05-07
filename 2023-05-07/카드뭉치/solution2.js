@@ -1,28 +1,6 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/159994?language=javascript
 
 function solution(cards1, cards2, goal) {
-  for (let i = 0; i < goal.length; i++) {
-    let count = 0;
-    if (goal[i] === cards1[i]) {
-      count++;
-    }
-
-    if (count === goal.length) {
-      return "Yes";
-    }
-  }
-
-  for (let i = 0; i < goal.length; i++) {
-    let count = 0;
-    if (goal[i] === cards2[i]) {
-      count++;
-    }
-
-    if (count === goal.length) {
-      return "Yes";
-    }
-  }
-
   for (let i = 0; i < cards1.length - 1; i++) {
     if (goal.indexOf(cards1[i]) > goal.indexOf(cards1[i + 1])) {
       return "No";
