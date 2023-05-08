@@ -10,11 +10,7 @@ function fillZero(array, num, start) {
 
 function solution(n, m, section) {
   let arr = new Array(n).fill(0);
-
   let answer = 0;
-  if (m === 1) {
-    return section.length;
-  }
 
   for (let i = 0; i < section.length; i++) {
     arr[section[i] - 1] = -1;
