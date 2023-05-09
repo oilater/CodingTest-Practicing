@@ -1,5 +1,7 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/140108?language=javascript
 
+// 이것도 ㅠ
+
 function solution(s) {
   const arr = [...s];
   let alpha = "abcdefghijklmnopqrstuvwxyz";
@@ -20,8 +22,6 @@ function solution(s) {
       answer++;
       sa.fill(0);
     }
-
-  
   }
 
   return answer;

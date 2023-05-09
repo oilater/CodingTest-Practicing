@@ -1,16 +1,19 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/140108?language=javascript
 
-// 오답
+// 정답
 
 function solution(s) {
   const arr = [...s];
-  let str = arr[0];
+  let str = "";
   let answer = 0;
   let count1 = 0;
   let count2 = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    if (str === arr[i]) {
+  for (const elem of arr) {
+    if (count1 === 0 && count2 === 0) {
+      str = elem;
+    }
+    if (str === elem) {
       count1++;
     } else {
       count2++;
@@ -20,12 +23,13 @@ function solution(s) {
       answer++;
       count1 = 0;
       count2 = 0;
-      str = arr[i + 1];
     }
   }
-  if (str === arr[arr.length - 1]) {
+
+  if (count1 !== 0 || count2 !== 0) {
     answer++;
   }
+
   return answer;
 }
 

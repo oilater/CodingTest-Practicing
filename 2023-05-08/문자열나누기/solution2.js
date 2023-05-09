@@ -1,5 +1,7 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/140108?language=javascript
 
+// 이것도
+
 function solution(s) {
   const arr = [...s];
   const stack = [];
@@ -14,7 +16,7 @@ function solution(s) {
   }
 
   while (arr[0] === arr[1]) {
-    
+
   }
   return answer;
 }

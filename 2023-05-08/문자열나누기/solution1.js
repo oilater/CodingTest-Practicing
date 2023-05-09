@@ -1,5 +1,7 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/140108?language=javascript
 
+// 문제 잘못 이해함
+
 function solution(s) {
   let arr = [...s];
   let answer = 0;
