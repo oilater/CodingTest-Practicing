@@ -22,16 +22,16 @@ function solution(N, stages) {
     length -= arr[i];
   }
 
-  let answer = [];
+  const answer = [];
   arr2.forEach((value, index) => {
     answer.push([value, index + 1]);
   });
 
-  let result = [];
+  const result = [];
   answer
     .sort((a, b) => b[0] - a[0])
-    .forEach(([value, value2]) => {
-      result.push(value2);
+    .forEach(([x, y]) => {
+      result.push(y);
     });
 
   return result;
