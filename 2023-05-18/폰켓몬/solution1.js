@@ -1,9 +1,10 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/1845?language=javascript
 
 function solution(nums) {
-  let answer = 0;
+  const length = nums.length / 2;
+  let set = new Set(nums);
 
-  return answer;
+  return set.size <= length ? set.size : length;
 }
 
 console.log(solution([3, 1, 2, 3])); // 2
