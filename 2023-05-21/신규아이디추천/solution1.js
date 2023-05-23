@@ -23,12 +23,17 @@ function solution(new_id) {
   newArr = newArr.join("").split("R").join("").split("");
 
   // 3단계
+  /* 
+    배열에서 마침표(.)가 2번 이상 연속될 떄 하나의 마침표(.)로 바꾸고 싶은데
+    예를 들어 ['b', '.', '.', '.', 'a', '.'] ---> ['b', '.', 'a','.'] 로 만들고 싶을떄 
+     저는 아래 코드처럼 번거롭게 했는데,,더 좋은 방법이 있을까요?
+     for 문 돌고 있을 때 splice 쓰는게 조금 까다롭네요 ㅠ
+  */
   for (let i = 0; i < newArr.length; i++) {
     if (newArr[i] === "." && newArr[i] === newArr[i + 1]) {
       newArr.splice(i, 1, "R");
     }
   }
-
   newArr = newArr.join("").split("R").join("").split("");
 
   // 4단계
